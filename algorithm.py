@@ -1,7 +1,7 @@
 from Edges import G,edges,addEdges,addNodes
 from helper import get_neighbors
-import math
-# This is heuristic function which has an equal values for all nodes
+# This is heuristic function which has an equal values for all nodes, but because of its better choice of data structures, it is
+# a lot more efficient than the djisktra algorithm (refer to comparealgorithm.py)
 def h(n,edges,start=0,end=0):
     H=addNodes(edges,1)
     return H[n]
@@ -31,7 +31,7 @@ def a_star_algorithm(G, start, stop, edges,B=False):
                 n=path[n]
             reconst_path.append(start)
             reconst_path.reverse()
-            if B==True:
+            if B==True: #if B is true then the output will contain bearings as well. If not, the default argument will just return the checkpoints.
                 for a in range(len(reconst_path)):
                     for b in range(len(edges)):
                         if reconst_path[a]==edges[b][0]:
@@ -59,50 +59,3 @@ def a_star_algorithm(G, start, stop, edges,B=False):
         closed_lst.add(n)
     print('Path does not exist!')
     return None
-
-
-final_output=a_star_algorithm(G,'Hu Dukaan', 'Office Of Student Life',edges)
-stroutput=''
-c=1
-for a in range(len(final_output)):
-    if a==0:
-        stroutput+=final_output[a]+'\n'
-    elif a==len(final_output)-1:
-        stroutput+='->'+final_output[a]+'\n'
-    else:
-        stroutput+='->'+final_output[a]+'\n'
-        c+=1
-
-
-
-
-# stroutput=''
-# c=1
-# for a in range(len(final_output)):
-#     if a==0:
-#         stroutput+='Current Location: '+final_output[a]+'\n'
-#     elif a==len(final_output)-1:
-#         stroutput+='Destination: '+final_output[a]+'\n'
-#     else:
-#         stroutput+='Checkpoint '+str(c)+': '+final_output[a]+'\n'
-#         c+=1
-        
-# print(stroutput)
-
-
-
-
-# output=a_star_algorithm(G,'Gate 2', 'Tapal 1',edges)
-# stroutput=''
-# c=1
-# for a in range(len(output)):
-#     if a==0:
-#         stroutput+='Here is your path followed by direction bearings!\nCurrent Location: '+output[a][0]+' '+output[a][1]+'\n'
-#     elif a==len(output)-1:
-#         stroutput+='Destination: '+output[a][0]+' '+output[a][1]+'\n'
-#     else:
-#         stroutput+='Checkpoint '+str(c)+': '+output[a][0]+' '+output[a][1]+'\n'
-#         c+=1
-# print(stroutput)
-
-

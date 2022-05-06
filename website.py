@@ -30,20 +30,22 @@ def path():
     print("Your location is '" + current + "'")
 
     
-    final_output = a_star_algorithm(G,current, destination ,edges)
+    final_output = a_star_algorithm(G,current, destination ,edges,True)
     
     stroutput=''
     c=1
    
 
+    stroutput=''
+    c=1
+
     for a in range(len(final_output)):
-        
         if a==0:
-            stroutput+= Markup( final_output[a] + ' -> <br>')
+            stroutput+=Markup('<br>'+final_output[a][0]+'<br>')
         elif a==len(final_output)-1:
-            stroutput+= Markup('->'+final_output[a]+'<br>')
+            stroutput+=Markup('->'+final_output[a][0]+'\tBearing: '+final_output[a][1]+'°<br>')
         else:
-            stroutput+= Markup('->'+final_output[a]+'<br>')
+            stroutput+=Markup('->'+final_output[a][0]+'\tBearing: '+final_output[a][1]+'°<br>')
             c+=1
 
     return render_template('path.html', output = stroutput)

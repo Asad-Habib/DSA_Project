@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request,redirect
 from algorithm import *
 from Edges import G, addNodes,edges, G1,positions1
+from flask import Markup
 
 
    
@@ -33,17 +34,20 @@ def path():
     
     stroutput=''
     c=1
+   
+
     for a in range(len(final_output)):
+        
         if a==0:
-            stroutput+=final_output[a]+'\n'
+            stroutput+= Markup( final_output[a] + ' -> <br>')
         elif a==len(final_output)-1:
-            stroutput+='->'+final_output[a]+'\n'
+            stroutput+= Markup('->'+final_output[a]+'<br>')
         else:
-            stroutput+='->'+final_output[a]+'\n'
+            stroutput+= Markup('->'+final_output[a]+'<br>')
             c+=1
-            
 
     return render_template('path.html', output = stroutput)
+
 
 
 

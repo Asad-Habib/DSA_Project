@@ -1,3 +1,4 @@
+# A database made by us. Each tuple contains the steps required to go from point A to point B, also the bearing relative to north as to where it is located.
 edges = [('Gate 2','MPR Gate end', 54, 170),
 ('MPR Gate end','Reception', 27, 200),
 ('Reception','Reception stairs',15,210),
@@ -219,6 +220,7 @@ G1=addNodes(edges1)
 addEdges(G1,edges1)
 G=addNodes(Edges)
 addEdges(G,Edges)
+
 positions1=[('Gate 2', (5, 350)), ('MPR outer', (123, 309)), ('Reception desk', (184, 341)), ('Reception stairs ground', (222, 342)), 
 ('Student Centre', (203, 382)), ('Reception Elevator ground', (173, 410)), ('OCS', (143, 379)), ('Turnstile', (221, 321)), 
 ('MPR inner', (186, 305)),('Reception washroom',(258, 358)), ('Library junction', (344,290)), ('Student life office', (322, 401)),

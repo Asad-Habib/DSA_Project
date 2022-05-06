@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request,redirect
+from flask import Flask, render_template, request
 from algorithm import *
-from Edges import G, addNodes,edges, G1,positions1
+from Edges import G, edges
 from flask import Markup
 
 

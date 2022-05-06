@@ -1,2 +1,2 @@
-https://freefrontend.com/css-menu/ # used to get a tempplate for the home menu icon
+https://freefrontend.com/css-menu/ # used to get a template for the home menu icon
 

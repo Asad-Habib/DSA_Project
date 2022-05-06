@@ -33,9 +33,6 @@ def path():
     
     final_output = a_star_algorithm(G,current, destination ,edges,True)
     
-    stroutput=''
-    c=1
-   
 
     stroutput=''
     c=1

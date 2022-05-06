@@ -1,3 +1,2 @@
-https://freefrontend.com/css-menu/
+https://freefrontend.com/css-menu/ # used to get a tempplate for the home menu icon
 
-https://www.w3schools.com/cssref/pr_background-image.asp

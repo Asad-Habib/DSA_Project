@@ -5,21 +5,22 @@ from flask import Markup
 
 
    
-
+# Flask is used to connect the backend and the frontend together
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/') #the defalt homepage
 def home():
     return render_template('home.html')
 
 
 
-@app.route('/path_final')
+@app.route('/path_final')# used to output results
 def path_final():
     return render_template('path.html')
 
 
-
+# grabs results by adding the location and destination to algorithm.py and displays the results
+#An angle is given along with the bearing, showing the bearing from north of the next node or checkpoint
 @app.route('/path', methods = ['POST'])
 def path():
 
@@ -43,9 +44,9 @@ def path():
         if a==0:
             stroutput+=Markup('<br>'+final_output[a][0]+'<br>')
         elif a==len(final_output)-1:
-            stroutput+=Markup('->'+final_output[a][0]+'\tBearing: '+final_output[a][1]+'°<br>')
+            stroutput+=Markup('->'+final_output[a][0]+'\t   : '+final_output[a][1]+'°<br>')
         else:
-            stroutput+=Markup('->'+final_output[a][0]+'\tBearing: '+final_output[a][1]+'°<br>')
+            stroutput+=Markup('->'+final_output[a][0]+'\t   : '+final_output[a][1]+'°<br>')
             c+=1
 
     return render_template('path.html', output = stroutput)

@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Markup
 from algorithm import *
 from Edges import G, edges
-from flask import Markup
+
 
 
    

@@ -57,6 +57,11 @@ def h1(n,stop,positions):
             x2=i[1][0]
             y2=i[1][1]
     return int(math.sqrt(abs(x2 - x1)*2 + abs(y2 - y1)*2))
+
+
+
+
+
 def astar_algorithm(G, start, stop, positions):
 #open_lst: a list of nodes which have been visited, but who's neighbours haven't all been always inspected, It starts off with the start node
 #closed_lst: a list of nodes which have been visited and who's neighbors have been always inspected
@@ -173,6 +178,10 @@ def a_star_algorithm(G, start, stop, edges,B=False):
         closed_lst.add(n)
     print('Path does not exist!')
     return None
+
+
+
+    
 a_star_time=time.time()
 output=a_star_algorithm(G1,'Gate 2', 'ATM',edges1)
 a_star_time=time.time()-a_star_time
